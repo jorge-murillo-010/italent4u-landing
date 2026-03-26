@@ -176,6 +176,82 @@ nav a:hover {
   color: #fff;
 }
 
+/* About Page Sections (applies to `about.html`) */
+.overview,
+.mission-vision,
+.values,
+.company-info {
+  padding: 4rem 2rem;
+  background-color: #e8f5e8;
+}
+
+.overview .container,
+.mission-vision .container,
+.values .value-cards,
+.company-info .info-box {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.overview .container,
+.mission-vision .container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.overview .text,
+.mission-vision .card {
+  flex: 1;
+  min-width: 280px;
+}
+
+.overview .image img,
+.mission-vision .card img,
+.values .value img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #1e9d22;
+}
+
+.mission-vision .card {
+  background-color: #ffffff;
+  border: 2px solid #1e9d22;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.values .value-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.values .value {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+}
+
+.company-info .info-box {
+  background: #ffffff;
+  border: 2px solid #1e9d22;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.company-info .info-box p {
+  margin: 0.5rem 0;
+}
+
 /* Stats Section */
 .stats {
   padding: 4rem 2rem;
