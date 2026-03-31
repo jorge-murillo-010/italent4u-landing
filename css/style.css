@@ -354,34 +354,76 @@ nav a:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.middle-image {
-  flex: 1;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 3px solid #1e9d22;
-}
-
-.cta {
-  flex: 1;
-  min-width: 250px;
+/* Services Page */
+.services-intro {
+  padding: 3rem;
   text-align: center;
 }
 
-.cta h2 {
-  font-size: 2.5rem;
-  color: #000000;
-  margin-bottom: 2rem;
+.services-details {
+  padding: 3rem;
 }
-.btn-services {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #1e9d22;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+
+.service-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.service-row img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.service-text ul {
+  margin-top: 1rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* PROCESS */
+.process {
+  background: #f5f5f5;
+  padding: 3rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.process-card {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.process-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* JOB SECTION */
+.job-flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.job-flex img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+/* WHY */
+.why {
+  padding: 3rem;
+  text-align: center;
 }
 /* Footer */
 footer {
