@@ -19,9 +19,25 @@
     <nav>
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
+    
+        <li class="dropdown">
+          <button type="button" class="dropbtn" id="about-btn">
+            About Us
+            <span class="dropdown-arrow">▼</span>
+          </button>
+    
+          <ul class="dropdown-content" id="about-menu">
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="vision.html">Vision</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="guiding-values.html">Guiding Values</a></li>
+          </ul>
+        </li>
+    
         <li><a href="careers.html">Careers</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -29,13 +45,17 @@
   <!-- 🔹 HERO -->
   <section class="hero">
     <img src="images/images.jpg" alt="Team working together">
-    <h1>Staffing Services with a Social Impact</h1>
-    <div class="container1">
-      <p>
-        At ITalent4U, we connect businesses with top LATAM developers
-        while creating meaningful global opportunities.
-      </p>
-      <a href="services.html" class="btn">Hire Talent</a>
+    <div class="hero-box">
+      <div class="hero-content">
+        <h1>Staffing Services with a Social Impact</h1>
+        <div class="container1">
+          <p>
+            At ITalent4U, we connect businesses with top LATAM developers
+            while creating meaningful global opportunities.
+          </p>
+          <a href="services.html" class="btn">Hire Talent</a>
+      </div>
+      </div>
     </div>
   </section>
   
