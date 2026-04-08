@@ -6,7 +6,7 @@ body {
 }
 /* Header Styles */
 header {
-  background: #1e9d22;
+  background: #1944a1;
   color: rgb(242, 235, 235);
   padding: 0.25rem 1rem;
   display: flex;
@@ -83,18 +83,18 @@ nav a:hover {
   left: 10%;
   transform: translateY(-50%);
   /* background-color: rgba(0, 0, 0, 0.8); */ /* Removed background */
-  border: 10px solid #1e9d22;
+  border: 10px solid #3117a6;
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: left;
-  max-width: 90rem;
-  height: 50rem;
+  max-width: 50rem;
+  height: 20rem;
 }
 
 .hero h1 {
   position: static;
   text-align: left;
-  color: #0ecf28;
+  color: #4369a1;
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -108,6 +108,9 @@ nav a:hover {
   width: 100%;
 }
 
+.container1 {
+  background-color: #333;
+}
 .container1 p {
   position: absolute;
   left: 10%;
@@ -116,15 +119,15 @@ nav a:hover {
   margin: 0 0 1rem 0;
   text-align: left;
   white-space: normal;
-  background-color: rgba(44, 44, 96, 0.519);
+  background-color: rgba(15, 15, 147, 0.519);
 }
 
 .btn {
   position: absolute;
-  bottom: 20rem;
+  bottom:2rem;
   left: 15rem;
   padding: 0.75rem 1.5rem;
-  background-color: #1e9d22;
+  background-color: #18479e;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
