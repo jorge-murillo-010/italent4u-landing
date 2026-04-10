@@ -15,28 +15,30 @@
 </head>
 
 <body>
-    <header>
-        <img src="images/italent.jfif" alt="ITalent4U Logo" class="logo">
-        <button type="button" id="menu"></button>
-        <nav>
-        <nav>
+    <header class="site-header">
+        <img src="images/itt.png" alt="ITalent4U Logo" class="logo">
+    
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    
+        <nav class="main-nav" id="mainNav">
             <ul class="navbar">
                 <li><a href="index.html">Home</a></li>
-        
-                <li class="dropdown">
-                    <button type="button" class="dropbtn" id="about-btn">
-                        About Us
-                        <span class="dropdown-arrow">▼</span>
+    
+                <div class="dropdown-wrap" id="aboutWrap">
+                    <button class="dropdown-btn" id="aboutBtn">
+                        About Us <span class="arrow"></span>
                     </button>
-        
-                    <ul class="dropdown-content" id="about-menu">
-                        <li><a href="overview.html">Overview</a></li>
-                        <li><a href="vision.html">Vision</a></li>
-                        <li><a href="mission.html">Mission</a></li>
-                        <li><a href="guiding-values.html">Guiding Values</a></li>
-                    </ul>
-                </li>
-        
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="overview.html">Our Story</a>
+                        <a href="#">Our Team</a>
+                        <a href="mission.html">Our Mission</a>
+                        <a href="vision.html">Our Vision</a>
+                        <a href="guiding-values.html">Core Values</a>
+                    </div>
+                </div>
+    
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -198,6 +200,52 @@
                     </ul>
                 </div>
                 <img src="images/jobs.jpg" alt="Job Opportunities">
+            </div>
+        </section>
+    
+        <!-- ⭐ CLIENT TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "ITalent4U transformed our recruitment process. We found top-quality candidates faster than 
+                            ever before, and the entire team was incredibly professional."
+                        </p>
+                        <p class="testimonial-author"><strong>Sarah Johnson</strong></p>
+                        <p class="testimonial-role">HR Manager, Tech Innovations Inc.</p>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "The RPO service saved us thousands in recruitment costs. ITalent4U's team understood our needs 
+                            perfectly and delivered exceptional results."
+                        </p>
+                        <p class="testimonial-author"><strong>Marco Rodriguez</strong></p>
+                        <p class="testimonial-role">Hiring Lead, Global Solutions Ltd.</p>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "I found my dream job through ITalent4U. The career guidance and support throughout the process 
+                            was invaluable. Highly recommended!"
+                        </p>
+                        <p class="testimonial-author"><strong>Ana Martinez</strong></p>
+                        <p class="testimonial-role">Senior Developer, Tech Startups</p>
+                    </div>
+    
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Working with ITalent4U's recruiting training program improved our internal team's hiring capabilities 
+                            significantly. Best investment we made."
+                        </p>
+                        <p class="testimonial-author"><strong>David Chen</strong></p>
+                        <p class="testimonial-role">Recruitment Manager, Enterprise Solutions</p>
+                    </div>
+    
+                </div>
             </div>
         </section>
     

@@ -9,46 +9,111 @@ const modifiedElem = document.getElementById("lastModified");
 if (modifiedElem) modifiedElem.innerHTML = "Last Modified: " + lastModified;
 
 // header //
-const mainnav = document.querySelector('.navbar');
-const hambutton = document.querySelector('#menu');
+var hamburger = document.getElementById('hamburger');
+var mainNav = document.getElementById('mainNav');
+var aboutBtn = document.getElementById('aboutBtn');
+var dropdownMenu = document.getElementById('dropdownMenu');
 
-if (mainnav && hambutton) {
-    hambutton.addEventListener('click', () => {
-        mainnav.classList.toggle('open');
-        hambutton.classList.toggle('open');
-    });
-}
+hamburger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  hamburger.classList.toggle('active');
+  mainNav.classList.toggle('open');
+});
 
+aboutBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  aboutBtn.classList.toggle('open');
+  dropdownMenu.classList.toggle('show');
+});
 
-// About Us Dropdown
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdown = document.querySelector('.dropdown');
-  const dropbtn = document.getElementById('about-btn');
-
-  if (!dropdown || !dropbtn) {
-    console.error("Dropdown elements not found! Check your HTML classes/IDs.");
-    return;
+document.addEventListener('click', function(e) {
+  if (!document.getElementById('aboutWrap').contains(e.target)) {
+    aboutBtn.classList.remove('open');
+    dropdownMenu.classList.remove('show');
   }
+  if (!mainNav.contains(e.target) && !hamburger.contains(e.target)) {
+    mainNav.classList.remove('open');
+    hamburger.classList.remove('active');
+  }
+});
 
-  dropbtn.addEventListener('click', function(e) {
-    e.stopImmediatePropagation();
-    dropdown.classList.toggle('active');
-  });
+// FORMS //
+const toggleBtns = document.querySelectorAll('.toggle-btn');
+const formContainers = document.querySelectorAll('.form-container');
 
-  // Close when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove('active');
-    }
-  });
-
-  // Close after clicking a link inside menu
-  const menuLinks = dropdown.querySelectorAll('.dropdown-content a');
-  menuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      dropdown.classList.remove('active');
-    });
+toggleBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const formType = this.getAttribute('data-form');
+    
+    // Remove active class from all buttons and forms
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    formContainers.forEach(form => form.classList.remove('active'));
+    
+    // Add active class to clicked button and corresponding form
+    this.classList.add('active');
+    document.getElementById(formType + 'Form').classList.add('active');
   });
 });
 
+// Form submission handlers
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('nl-name').value.trim();
+  const email = document.getElementById('nl-email').value.trim();
+  const messageEl = document.getElementById('nl-message');
+  
+  if (!name || !email) {
+    messageEl.classList.remove('success');
+    messageEl.classList.add('error');
+    messageEl.textContent = 'Please fill in all fields.';
+    return;
+  }
+  
+  // If using Formspree, this would work automatically
+  // For now, show success message
+  messageEl.classList.remove('error');
+  messageEl.classList.add('success');
+  messageEl.textContent = 'Thank you for subscribing!';
+  
+  // Reset form
+  this.reset();
+  
+  // Clear message after 3 seconds
+  setTimeout(() => {
+    messageEl.textContent = '';
+    messageEl.classList.remove('success', 'error');
+  }, 3000);
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('c-name').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const phone = document.getElementById('c-phone').value.trim();
+  const company = document.getElementById('c-company').value.trim();
+  const message = document.getElementById('c-message').value.trim();
+  const messageEl = document.getElementById('c-message-status');
+  
+  if (!name || !email || !phone || !company || !message) {
+    messageEl.classList.remove('success');
+    messageEl.classList.add('error');
+    messageEl.textContent = 'Please fill in all fields.';
+    return;
+  }
+  
+  // If using Formspree, this would work automatically
+  // For now, show success message
+  messageEl.classList.remove('error');
+  messageEl.classList.add('success');
+  messageEl.textContent = 'Thank you! We will contact you soon.';
+  
+  // Reset form
+  this.reset();
+  
+  // Clear message after 3 seconds
+  setTimeout(() => {
+    messageEl.textContent = '';
+    messageEl.classList.remove('success', 'error');
+  }, 3000);
+});
 
