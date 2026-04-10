@@ -13,27 +13,30 @@
   <title>ITalent4U</title>
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <img src="images/itt.png" alt="ITalent4U Logo" class="logo">
-    <button type="button" id="menu"></button>
-    <nav>
+  
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  
+    <nav class="main-nav" id="mainNav">
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
-    
-        <li class="dropdown">
-          <button type="button" class="dropbtn" id="about-btn">
-            About Us
-            <span class="dropdown-arrow">▼</span>
+  
+        <div class="dropdown-wrap" id="aboutWrap">
+          <button class="dropdown-btn" id="aboutBtn">
+            About Us <span class="arrow"></span>
           </button>
-    
-          <ul class="dropdown-content" id="about-menu">
-            <li><a href="overview.html">Overview</a></li>
-            <li><a href="vision.html">Vision</a></li>
-            <li><a href="mission.html">Mission</a></li>
-            <li><a href="guiding-values.html">Guiding Values</a></li>
-          </ul>
-        </li>
-    
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="overview.html">Our Story</a>
+            <a href="team.html">Our Team</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="vision.html">Our Vision</a>
+            <a href="guiding-values.html">Core Values</a>
+          </div>
+        </div>
+  
         <li><a href="careers.html">Careers</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -42,19 +45,19 @@
     </nav>
   </header>
 
-  <!-- 🔹 HERO -->
-   <section class="hero">
-    <img src="images/images.jpg" alt="Team working together" />
-    <div class="hero-overlay"></div>
-    <div class="hero-box">
-      <h1>Staffing Services with a Social Impact</h1>
-      <p>
-        At ITalent4U, we connect businesses with top LATAM developers
-        while creating meaningful global opportunities.
-      </p>
-      <a href="services.html" class="btn">Hire Talent</a>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="images/images.jpg" alt="Team working together">
+  <div class="hero-overlay"></div>
+  <div class="yellow-border"></div>
+  <div class="yellow-slash"></div>
+  <div class="yellow-slash2"></div>
+  <div class="hero-content">
+    <h1>Staffing Services with a Social Impact</h1>
+    <p>Hire smarter, faster, better.</p>
+    <a href="services.html" class="hero-btn">Hire Talent</a>
+  </div>
+</section>
   
   <!-- 🔹 ABOUT -->
   <section class="about">
@@ -116,7 +119,45 @@
       <img src="images/teem.jpg" alt="Team collaboration" class="middle-image">
       <div class="cta">
         <h2>Find the right people in the right places.</h2>
-        <a href="#" class="btn-services">Contact Us</a>
+        
+        <!-- Form Toggle Buttons -->
+        <div class="form-toggle">
+          <button class="toggle-btn active" data-form="newsletter">Newsletter</button>
+          <button class="toggle-btn" data-form="contact">Contact Us</button>
+        </div>
+        
+        <!-- Newsletter Form -->
+        <form id="newsletterForm" class="form-container active" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+          <div class="form-group">
+            <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
+          </div>
+          <button type="submit" class="btn-services">Subscribe</button>
+          <p class="form-message" id="nl-message"></p>
+        </form>
+        
+        <!-- Contact Form -->
+        <form id="contactForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+          <div class="form-group">
+            <input type="text" id="c-name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="c-email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="c-phone" name="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <input type="text" id="c-company" name="company" placeholder="Company Name" required>
+          </div>
+          <div class="form-group">
+            <textarea id="c-message" name="message" placeholder="Your Message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-services">Send Message</button>
+          <p class="form-message" id="c-message-status"></p>
+        </form>
       </div>
     </div>
   </section>

@@ -15,27 +15,30 @@
 </head>
 
 <body>
-    <header>
-        <img src="images/italent.jfif" alt="ITalent4U Logo" class="logo">
-        <button type="button" id="menu"></button>
-        <nav>
+    <header class="site-header">
+        <img src="images/itt.png" alt="ITalent4U Logo" class="logo">
+    
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    
+        <nav class="main-nav" id="mainNav">
             <ul class="navbar">
                 <li><a href="index.html">Home</a></li>
-        
-                <li class="dropdown">
-                    <button type="button" class="dropbtn" id="about-btn">
-                        About Us
-                        <span class="dropdown-arrow">▼</span>
+    
+                <div class="dropdown-wrap" id="aboutWrap">
+                    <button class="dropdown-btn" id="aboutBtn">
+                        About Us <span class="arrow"></span>
                     </button>
-        
-                    <ul class="dropdown-content" id="about-menu">
-                        <li><a href="overview.html">Overview</a></li>
-                        <li><a href="vision.html">Vision</a></li>
-                        <li><a href="mission.html">Mission</a></li>
-                        <li><a href="guiding-values.html">Guiding Values</a></li>
-                    </ul>
-                </li>
-        
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="overview.html">Our Story</a>
+                        <a href="team.html">Our Team</a>
+                        <a href="mission.html">Our Mission</a>
+                        <a href="vision.html">Our Vision</a>
+                        <a href="guiding-values.html">Core Values</a>
+                    </div>
+                </div>
+    
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
