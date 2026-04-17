@@ -37,6 +37,25 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// footer dropdown //
+var footerAboutBtn = document.getElementById('footerAboutBtn');
+var footerDropdownMenu = document.getElementById('footerDropdownMenu');
+
+if (footerAboutBtn && footerDropdownMenu) {
+  footerAboutBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    footerAboutBtn.classList.toggle('open');
+    footerDropdownMenu.classList.toggle('show');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('footerAboutWrap').contains(e.target)) {
+      footerAboutBtn.classList.remove('open');
+      footerDropdownMenu.classList.remove('show');
+    }
+  });
+}
+
 // FORMS //
 const toggleBtns = document.querySelectorAll('.toggle-btn');
 const formContainers = document.querySelectorAll('.form-container');
@@ -116,4 +135,40 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     messageEl.classList.remove('success', 'error');
   }, 3000);
 });
+
+// Footer Contact Form Handler
+var footerContactForm = document.getElementById('footerContactForm');
+if (footerContactForm) {
+  footerContactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const company = document.getElementById('f-company').value.trim();
+    const message = document.getElementById('f-message').value.trim();
+    const messageEl = document.getElementById('f-message-status');
+    
+    if (!name || !email || !phone || !company || !message) {
+      messageEl.classList.remove('success');
+      messageEl.classList.add('error');
+      messageEl.textContent = 'Please fill in all fields.';
+      return;
+    }
+    
+    // If using Formspree, this would work automatically
+    // For now, show success message
+    messageEl.classList.remove('error');
+    messageEl.classList.add('success');
+    messageEl.textContent = 'Thank you! We will contact you soon.';
+    
+    // Reset form
+    this.reset();
+    
+    // Clear message after 3 seconds
+    setTimeout(() => {
+      messageEl.textContent = '';
+      messageEl.classList.remove('success', 'error');
+    }, 3000);
+  });
+}
 
