@@ -29,6 +29,12 @@ body {
   object-fit: contain;
 }
 
+.logo1 {
+  height: 36px;
+  object-fit: contain;
+  
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
