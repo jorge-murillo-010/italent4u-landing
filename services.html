@@ -79,20 +79,20 @@
     
                 <!-- RPO -->
                 <div class="service-row">
-                    <img src="images/rpo.png" alt="RPO Service">
-                    <div class="service-text">
-                        <h3>1. Recruitment Process Outsourcing (RPO)</h3>
-                        <p>
-                            Our RPO service allows companies to outsource all or part of their recruitment process to our
-                            expert team. We manage everything from job postings to final hires.
-                        </p>
-                        <ul>
-                            <li>End-to-end recruitment management</li>
-                            <li>Reduced hiring costs</li>
-                            <li>Faster time-to-hire</li>
-                            <li>Access to global talent pools</li>
-                        </ul>
-                    </div>
+                        <img src="images/rpo.png" alt="RPO Service">
+                        <div class="service-text">
+                            <h3>1. Recruitment Process Outsourcing (RPO)</h3>
+                            <p>
+                                Our RPO service allows companies to outsource all or part of their recruitment process to our
+                                expert team. We manage everything from job postings to final hires.
+                            </p>
+                            <ul>
+                                <li>End-to-end recruitment management</li>
+                                <li>Reduced hiring costs</li>
+                                <li>Faster time-to-hire</li>
+                                <li>Access to global talent pools</li>
+                            </ul>
+                        </div>
                 </div>
     
                 <!-- Candidate Sourcing -->
@@ -346,6 +346,48 @@
                     <p class="form-message" id="c-message-status"></p>
                 </form>
             </div>
+        </div>
+    
+        <div class="footer-forms">
+            <!-- Form Toggle Buttons -->
+            <div class="form-toggle">
+                <button class="toggle-btn active" data-form="newsletter">Newsletter</button>
+                <button class="toggle-btn" data-form="contact">Contact Us</button>
+            </div>
+    
+            <!-- Newsletter Form -->
+            <form id="newsletterForm" class="form-container active" method="POST"
+                action="https://formspree.io/f/YOUR_FORM_ID">
+                <div class="form-group">
+                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="btn-services">Subscribe</button>
+                <p class="form-message" id="nl-message"></p>
+            </form>
+    
+            <!-- Contact Form -->
+            <form id="footerContactForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                <div class="form-group">
+                    <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="f-phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="f-company" name="company" placeholder="Company Name" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="f-message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-services">Send Message</button>
+                <p class="form-message" id="f-message-status"></p>
+            </form>
         </div>
     
         <div class="footer-bottom">
