@@ -77,14 +77,16 @@
 /*Hero*/
 @media (max-width: 600px) {
     .hero {
-        height: 340px;
+        min-height: auto;
+        height: auto;
+        padding: 2rem 1rem;
     }
 
     .yellow-border {
-        width: 80%;
-        height: 72%;
-        top: 12%;
-        left: 4%;
+        width: 90%;
+        height: 84%;
+        top: 10%;
+        left: 5%;
     }
 
     .yellow-slash,
@@ -92,9 +94,27 @@
         display: none;
     }
 
-    .hero-content {
-        left: 8%;
-        max-width: 90%;
+    .hero-content,
+    .hero .hero-box {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 1.25rem;
+        text-align: center;
+    }
+
+    .hero-content h1,
+    .hero-content p {
+        text-align: center;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -152,39 +172,46 @@
 /* ============= RESPONSIVE ADJUSTMENTS ============= */
 
 @media (max-width: 1024px) {
-    .hero .hero-box {
+    .hero .hero-box,
+    .hero .hero-content {
         left: 5%;
         padding: 2rem;
+        width: min(90%, 680px);
         max-width: 85%;
     }
 }
 
 @media (max-width: 768px) {
-    .hero .hero-box {
+    .hero .hero-box,
+    .hero .hero-content {
         position: relative;
         /* Important: Make it flow naturally on mobile */
         top: auto;
         left: auto;
         transform: none;
         margin: 2rem auto;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
         padding: 2rem 1.5rem;
         text-align: center;
         /* Center content on mobile */
     }
 
     .hero h1,
-    .container1 p {
+    .hero-content p {
         text-align: center;
     }
 
+    .hero-btn,
     .btn {
         margin: 1.5rem auto 0;
     }
 }
 
 @media (max-width: 480px) {
-    .hero .hero-box {
+    .hero .hero-box,
+    .hero .hero-content {
         padding: 1.8rem 1.2rem;
         border-width: 8px;
     }
@@ -193,7 +220,7 @@
         font-size: clamp(1.8rem, 7vw, 2.8rem);
     }
 
-    .container1 p {
+    .hero-content p {
         font-size: 1.1rem;
         padding: 0.9rem;
     }
