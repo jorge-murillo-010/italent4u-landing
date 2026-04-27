@@ -173,9 +173,15 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 480px;
+  min-height: 60vh;
+  max-height: 760px;
+  height: auto;
   overflow: hidden;
   background: #A6A6A6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
 }
 
 .hero-video {
@@ -196,10 +202,10 @@ body {
 
 .yellow-border {
   position: absolute;
-  top: 14%;
-  left: 6%;
-  width: 78%;
-  height: 75%;
+  top: 10%;
+  left: 5%;
+  width: 85%;
+  height: 80%;
   border: 10px solid #1276BF;
   z-index: 2;
 }
@@ -226,13 +232,18 @@ body {
   z-index: 2;
 }
 
-.hero-content {
+.hero-content,
+.hero-box {
   position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
-  max-width: 480px;
+  width: min(95%, 720px);
+  max-width: 720px;
+  min-height: 340px;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .hero-content h1 {
@@ -243,6 +254,7 @@ body {
   text-transform: uppercase;
   line-height: 1.05;
   margin-bottom: 1rem;
+  word-break: break-word;
 }
 
 .hero-content p {
@@ -253,10 +265,14 @@ body {
   text-transform: uppercase;
   letter-spacing: .12em;
   margin-bottom: 1.6rem;
+  word-break: break-word;
 }
 
 .hero-btn {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
   padding: 12px 28px;
   border: 2px solid #1276BF;
   color: #ffffff;
@@ -359,14 +375,93 @@ body {
   min-width: 280px;
 }
 
+.overview .overview-grid,
+.overview .mission-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.4fr) minmax(280px, 0.9fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.overview-copy,
+.mission-copy {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.overview-image-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.overview-card {
+  background-color: #fff;
+  border-radius: 26px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 52, 77, 0.14);
+  border: 1px solid rgba(18, 118, 191, 0.12);
+}
+
+.overview-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+
+.overview .image {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-items: center;
+}
+
+.overview .overview-images {
+  width: 100%;
+}
+
+.overview .mission-image,
+.overview .vision-image {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.overview .mission-layout,
+.overview .vision-layout {
+  align-items: flex-start;
+}
+
+.overview .mission-image img,
+.overview .vision-image img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(15, 52, 77, 0.18);
+  border: 3px solid rgba(18, 118, 191, 0.16);
+  display: block;
+}
+
+.overview .overview-images img,
 .overview .image img,
 .mission-vision .card img,
 .values .value img {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(15, 52, 77, 0.12);
+  box-shadow: 0 6px 18px rgba(15, 52, 77, 0.12);
   border: 2px solid #1276BF;
+}
+
+.overview .text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #314156;
+  margin-bottom: 1.4rem;
+}
+
+.overview .text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.25rem;
 }
 
 .mission-vision .card {
@@ -393,6 +488,52 @@ body {
   width: 200px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(15, 52, 77, 0.1);
+}
+
+.values .value-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.values .value-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-direction: row-reverse;
+  background: #ffffff;
+  border: 1px solid rgba(18, 118, 191, 0.18);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(15, 52, 77, 0.06);
+  min-height: 140px;
+}
+
+.values .value-list li img {
+  width: 110px;
+  min-width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #eef7ff;
+  padding: 0.85rem;
+}
+
+.values .value-list li strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+  color: #0f344d;
+}
+
+.values .value-list li div {
+  color: #344254;
+  line-height: 1.7;
+  text-align: left;
 }
 
 .company-info .info-box {
