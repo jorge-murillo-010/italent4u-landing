@@ -129,7 +129,6 @@
     
             <!-- Contact Form -->
             <div class="footer-right">
-                <h3>Get in Touch</h3>
                 <form id="contactForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
                     <div class="form-group">
                         <input type="text" id="c-name" name="name" placeholder="Your Name" required>
@@ -155,25 +154,14 @@
         <div class="footer-forms">
             <!-- Form Toggle Buttons -->
             <div class="form-toggle">
-                <button class="toggle-btn active" data-form="newsletter">Newsletter</button>
-                <button class="toggle-btn" data-form="contact">Contact Us</button>
+                <button class="toggle-btn active" data-form="contact">Contact Us</button>
+                <button class="toggle-btn" data-form="newsletter">Newsletter</button>
             </div>
     
-            <!-- Newsletter Form -->
-            <form id="newsletterForm" class="form-container active" method="POST"
-                action="https://formspree.io/f/YOUR_FORM_ID">
-                <div class="form-group">
-                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
-                </div>
-                <button type="submit" class="btn-services">Subscribe</button>
-                <p class="form-message" id="nl-message"></p>
-            </form>
-    
             <!-- Contact Form -->
-            <form id="footerContactForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <form id="footerContactForm" class="form-container active" method="POST"
+                action="https://formspree.io/f/YOUR_FORM_ID">
+                <h3>Get in Touch</h3>
                 <div class="form-group">
                     <input type="text" id="f-name" name="name" placeholder="Your Name" required>
                 </div>
@@ -191,6 +179,18 @@
                 </div>
                 <button type="submit" class="btn-services">Send Message</button>
                 <p class="form-message" id="f-message-status"></p>
+            </form>
+    
+            <!-- Newsletter Form -->
+            <form id="newsletterForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                <div class="form-group">
+                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="btn-services">Subscribe</button>
+                <p class="form-message" id="nl-message"></p>
             </form>
         </div>
     
