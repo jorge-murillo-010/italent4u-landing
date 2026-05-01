@@ -24,6 +24,21 @@ body {
   z-index: 1000;
 }
 
+.site-header .logos {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.site-header .logos a {
+  display: block;
+  text-decoration: none;
+}
+
+.site-header .logos img {
+  display: block;
+}
+
 .logo {
   height: 36px;
   object-fit: contain;

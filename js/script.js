@@ -70,7 +70,13 @@ toggleBtns.forEach(btn => {
     
     // Add active class to clicked button and corresponding form
     this.classList.add('active');
-    document.getElementById(formType + 'Form').classList.add('active');
+    const targetFormId = formType === 'contact' && document.getElementById('footerContactForm')
+      ? 'footerContactForm'
+      : formType + 'Form';
+    const targetForm = document.getElementById(targetFormId);
+    if (targetForm) {
+      targetForm.classList.add('active');
+    }
   });
 });
 
