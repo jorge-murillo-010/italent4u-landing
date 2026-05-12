@@ -1448,57 +1448,81 @@ footer {
   transition: all 0.3s;
 }
 
-.footer-forms .toggle-btn.active {
+.footer-forms .toggle-btn.active,
+.footer-forms .toggle-btn:hover {
   background: #1276BF;
   color: #ffffff;
 }
 
-.footer-forms .toggle-btn:hover {
-  background: #1276BF;
-}
-
 .footer-forms .form-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
+  padding: 1.5rem;
   display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
 }
 
 .footer-forms .form-container.active {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.footer-forms .form-group {
+.footer-forms .form-container h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #ffffff;
+}
+
+.footer-forms .form-group,
+.footer-forms form > div {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-forms .form-group label,
+.footer-forms form > div label {
+  color: #e5e9f1;
+  font-size: 0.95rem;
 }
 
 .footer-forms .form-group input,
-.footer-forms .form-group textarea {
+.footer-forms .form-group textarea,
+.footer-forms .form-group select,
+.footer-forms form > div select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #1276BF;
-  border-radius: 5px;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(18, 118, 191, 0.4);
+  border-radius: 10px;
   background-color: #ffffff;
   color: #2B332C;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.footer-forms .form-group textarea {
+  min-height: 140px;
+  resize: vertical;
 }
 
 .footer-forms .form-group input::placeholder,
 .footer-forms .form-group textarea::placeholder {
-  color: #999;
+  color: #777;
 }
 
 .footer-forms .btn-services {
-  padding: 0.75rem 1.5rem;
+  width: fit-content;
+  padding: 0.9rem 1.75rem;
   background: #1276BF;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
+  font-weight: 700;
+  transition: background 0.2s ease;
 }
 
 .footer-forms .btn-services:hover {
@@ -1509,18 +1533,24 @@ footer {
   background-color: transparent;
   border: none;
   color: #ffffff;
+  min-height: 1.4rem;
+  margin-top: 0.2rem;
 }
 
 .footer-forms .form-message.success {
   color: #d4edda;
-  background-color: rgba(39, 174, 96, 0.2);
+  background-color: rgba(39, 174, 96, 0.12);
   border: 1px solid rgba(39, 174, 96, 0.4);
+  border-radius: 8px;
+  padding: 0.7rem 0.95rem;
 }
 
 .footer-forms .form-message.error {
   color: #f8d7da;
-  background-color: rgba(231, 76, 60, 0.2);
+  background-color: rgba(231, 76, 60, 0.12);
   border: 1px solid rgba(231, 76, 60, 0.4);
+  border-radius: 8px;
+  padding: 0.7rem 0.95rem;
 }
 
 .footer-bottom {
@@ -1861,5 +1891,157 @@ legend {
 
   .login-form form {
     padding: 1.5rem;
+  }
+}
+
+/* Careers Page */
+
+main {
+  font-family: Arial, sans-serif;
+  padding: 2.5rem 1.5rem 4rem;
+  background: linear-gradient(180deg, #f5f7fa 0%, #edf3f9 100%);
+  min-height: calc(100vh - 120px);
+}
+
+/* Intro Section */
+.careers-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 1.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  box-shadow: 0 18px 35px rgba(15, 52, 77, 0.08);
+}
+
+.careers-intro h2 {
+  font-size: 2.8rem;
+  color: #0F344D;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.careers-intro p {
+  font-size: 1.15rem;
+  color: #47525E;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Job Listings */
+.job-listings {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.job-listings h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.2rem;
+  color: #0F344D;
+  margin-bottom: 0;
+}
+
+/* Job Cards */
+.job {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 52, 77, 0.06);
+  box-shadow: 0 14px 40px rgba(15, 52, 77, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.job:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(15, 52, 77, 0.12);
+  border-color: rgba(18, 118, 191, 0.18);
+}
+
+.job-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.job h3 {
+  color: #0F344D;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.job p {
+  color: #556170;
+  margin-bottom: 0.85rem;
+  line-height: 1.75;
+}
+
+.job p strong {
+  color: #0F344D;
+}
+
+/* Apply Button */
+.job button {
+  margin-top: 1.5rem;
+  background: #1276BF;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.job button:hover {
+  background: #0d5d9a;
+  transform: translateY(-1px);
+}
+
+/* No Jobs Message */
+.no-jobs {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  main {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .careers-intro {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .careers-intro h2 {
+    font-size: 2.4rem;
+  }
+
+  .job {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .job-listings {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-intro h2 {
+    font-size: 2rem;
+  }
+
+  .job button {
+    width: 100%;
   }
 }
