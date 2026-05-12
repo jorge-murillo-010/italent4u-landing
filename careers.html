@@ -55,81 +55,207 @@
     
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-    
-        <!-- Intro Section -->
-        <section class="careers-intro">
-            <h2>Join Our Team</h2>
-            <p>
-                Join our mission to connect global talent with meaningful opportunities.
-            </p>
-        </section>
-    
-        <!-- Job Listings Section -->
-        <section class="job-listings">
-            <h2>Open Positions</h2>
-    
-            <!-- Example Job (you can duplicate this when you have real jobs) -->
-            <!--
-          <div class="job">
+<main>
+
+    <!-- Intro Section -->
+    <section class="careers-intro">
+        <h2>Join Our Team</h2>
+        <p>
+            Join our mission to connect global talent with meaningful opportunities.
+        </p>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="job-listings">
+        <h2>Open Positions</h2>
+
+        <!-- Job 1 -->
+        <div class="job">
+            <img src="images/hiring.png" alt="Frontend Developer" class="job-image">
             <h3>Frontend Developer</h3>
             <p><strong>Location:</strong> Remote</p>
             <p><strong>Type:</strong> Full-time</p>
-            <p>We are looking for a skilled frontend developer to join our team.</p>
-            <button>Apply Now</button>
-          </div>
-          -->
-    
-            <!-- No Jobs Message -->
-            <p class="no-jobs">
-                No open roles currently, but we’re always looking for great talent.
+            <p>
+                We are looking for a creative frontend developer skilled in
+                HTML, CSS, JavaScript, and responsive design.
             </p>
-    
-        </section>
-    
-    </main>
+            <a href="login.html" class="btn-services">Apply Now</a>
+        </div>
 
-    
+        <!-- Job 2 -->
+        <div class="job">
+            <img src="images/jobs.png" alt="Backend Developer" class="job-image">
+            <h3>Backend Developer</h3>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Type:</strong> Full-time</p>
+            <p>
+                Join our engineering team to build scalable APIs and secure
+                backend systems.
+            </p>
+            <a href="login.html" class="btn-services">Apply Now</a>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job">
+            <img src="images/meaningful.png" alt="UI/UX Designer" class="job-image">
+            <h3>UI/UX Designer</h3>
+            <p><strong>Location:</strong> Hybrid</p>
+            <p><strong>Type:</strong> Contract</p>
+            <p>
+                Help us create intuitive and visually appealing experiences
+                for users across our platforms.
+            </p>
+            <a href="login.html" class="btn-services">Apply Now</a>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job">
+            <img src="images/training.png" alt="Digital Marketing Specialist" class="job-image">
+            <h3>Digital Marketing Specialist</h3>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Type:</strong> Part-time</p>
+            <p>
+                We are seeking a marketing specialist to grow our online
+                presence and manage campaigns.
+            </p>
+            <a href="login.html" class="btn-services">Apply Now</a>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job">
+            <img src="images/teamcollab.png" alt="Customer Support Representative" class="job-image">
+            <h3>Customer Support Representative</h3>
+            <p><strong>Location:</strong> On-site</p>
+            <p><strong>Type:</strong> Full-time</p>
+            <p>
+                Provide excellent support and assistance to users and clients
+                worldwide.
+            </p>
+            <a href="login.html" class="btn-services">Apply Now</a>
+        </div>
+
+    </section>
+
+</main>
     <footer>
+        <!-- TOP SECTION: Forms -->
+        <div class="footer-forms">
+    
+            <!-- Form Toggle Buttons -->
+            <div class="form-toggle">
+                <button class="toggle-btn active" data-form="contact">Contact Us</button>
+                <button class="toggle-btn" data-form="newsletter">Newsletter</button>
+            </div>
+    
+            <!-- Contact Form -->
+            <form id="footerContactForm" class="form-container active" method="POST"
+                action="https://formspree.io/f/YOUR_FORM_ID">
+                <h3>Get in Touch</h3>
+    
+                <div class="form-group">
+                    <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                </div>
+    
+                <div class="form-group">
+                    <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                </div>
+    
+                <div class="form-group">
+                    <input type="tel" id="f-phone" name="phone" placeholder="Phone Number" required>
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" id="f-company" name="company" placeholder="Company Name" required>
+                </div>
+    
+                <div>
+                    <label for="service">What service are you looking for?</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select</option>
+                        <option value="staffing">Staffing</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="training">Training</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <textarea id="f-message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+    
+                <button type="submit" class="btn-services">Send Message</button>
+                <p class="form-message" id="f-message-status"></p>
+            </form>
+    
+            <!-- Newsletter Form -->
+            <form id="newsletterForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                <h3>Subscribe to our Newsletter</h3>
+    
+                <div class="form-group">
+                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
+                </div>
+    
+                <div class="form-group">
+                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
+                </div>
+    
+                <button type="submit" class="btn-services">Subscribe</button>
+                <p class="form-message" id="nl-message"></p>
+            </form>
+    
+        </div>
+    
+        <!-- SECOND SECTION -->
         <div class="footer-top">
+    
+            <!-- LEFT -->
             <div class="footer-left">
+    
                 <div class="logos">
                     <a href="index.html">
                         <img src="images/italentlogo1.png" alt="ITalent4U Logo" class="logo1">
                     </a>
+    
                     <a href="index.html">
                         <img src="images/italentlogo.png" alt="ITalent4U Logo" class="logo">
                     </a>
                 </div>
+    
                 <div class="social-media">
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <a href="https://facebook.com" target="_blank">
                         <i class="fab fa-facebook"></i> Facebook
                     </a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+    
+                    <a href="https://twitter.com" target="_blank">
                         <i class="fab fa-twitter"></i> Twitter
                     </a>
-                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+    
+                    <a href="https://linkedin.com" target="_blank">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+    
+                    <a href="https://instagram.com" target="_blank">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
+    
             </div>
     
+            <!-- NAVIGATION -->
             <nav class="main-nav footer-nav" id="footerNav">
                 <ul class="navbar">
+    
                     <li><a href="index.html">Home</a></li>
     
                     <div class="dropdown-wrap" id="footerAboutWrap">
                         <button class="dropdown-btn" id="footerAboutBtn">
                             About Us <span class="arrow"></span>
                         </button>
+    
                         <div class="dropdown-menu" id="footerDropdownMenu">
                             <a href="overview.html">Our Story</a>
                             <a href="team.html">Our Team</a>
@@ -141,82 +267,19 @@
     
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="login.html">Login</a></li>
+    
                 </ul>
             </nav>
     
-            <!-- Contact Form -->
-            <div class="footer-right">
-                <form id="contactForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
-                    <div class="form-group">
-                        <input type="text" id="c-name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="c-email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="c-phone" name="phone" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="c-company" name="company" placeholder="Company Name" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="c-message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-services">Send Message</button>
-                    <p class="form-message" id="c-message-status"></p>
-                </form>
-            </div>
         </div>
     
-        <div class="footer-forms">
-            <!-- Form Toggle Buttons -->
-            <div class="form-toggle">
-                <button class="toggle-btn active" data-form="contact">Contact Us</button>
-                <button class="toggle-btn" data-form="newsletter">Newsletter</button>
-            </div>
-    
-            <!-- Contact Form -->
-            <form id="footerContactForm" class="form-container active" method="POST"
-                action="https://formspree.io/f/YOUR_FORM_ID">
-                <h3>Get in Touch</h3>
-                <div class="form-group">
-                    <input type="text" id="f-name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="f-email" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="f-phone" name="phone" placeholder="Phone Number" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="f-company" name="company" placeholder="Company Name" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="f-message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn-services">Send Message</button>
-                <p class="form-message" id="f-message-status"></p>
-            </form>
-    
-            <!-- Newsletter Form -->
-            <form id="newsletterForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
-                <div class="form-group">
-                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
-                </div>
-                <button type="submit" class="btn-services">Subscribe</button>
-                <p class="form-message" id="nl-message"></p>
-            </form>
-        </div>
-    
+        <!-- FOOTER BOTTOM -->
         <div class="footer-bottom">
             <p>&copy; <span id="currentyear"></span> ITalent4U. All rights reserved.</p>
             <p id="lastModified"></p>
         </div>
     </footer>
+
 </body>
 </html>
