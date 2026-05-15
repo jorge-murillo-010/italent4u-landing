@@ -80,6 +80,26 @@ toggleBtns.forEach(btn => {
   });
 });
 
+const contactNavLink = document.querySelector('a[href="#footerForms"]');
+const footerFormsSection = document.getElementById('footerForms');
+
+if (contactNavLink && footerFormsSection) {
+  contactNavLink.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    formContainers.forEach(form => form.classList.remove('active'));
+
+    const contactBtn = document.querySelector('.toggle-btn[data-form="contact"]');
+    const contactForm = document.getElementById('footerContactForm');
+
+    if (contactBtn) contactBtn.classList.add('active');
+    if (contactForm) contactForm.classList.add('active');
+
+    footerFormsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
 // Form submission handlers
 document.getElementById('newsletterForm').addEventListener('submit', function(e) {
   e.preventDefault();
