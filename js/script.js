@@ -80,24 +80,35 @@ toggleBtns.forEach(btn => {
   });
 });
 
-const contactNavLink = document.querySelector('a[href="#footerForms"]');
+const contactNavLinks = document.querySelectorAll('a[href$="#footerForms"]');
 const footerFormsSection = document.getElementById('footerForms');
 
-if (contactNavLink && footerFormsSection) {
-  contactNavLink.addEventListener('click', function(e) {
-    e.preventDefault();
+function activateContactFormAndScroll() {
+  if (!footerFormsSection) return;
+  toggleBtns.forEach(b => b.classList.remove('active'));
+  formContainers.forEach(form => form.classList.remove('active'));
+  const contactBtn = document.querySelector('.toggle-btn[data-form="contact"]');
+  const contactForm = document.getElementById('footerContactForm');
+  if (contactBtn) contactBtn.classList.add('active');
+  if (contactForm) contactForm.classList.add('active');
+  footerFormsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-    toggleBtns.forEach(b => b.classList.remove('active'));
-    formContainers.forEach(form => form.classList.remove('active'));
-
-    const contactBtn = document.querySelector('.toggle-btn[data-form="contact"]');
-    const contactForm = document.getElementById('footerContactForm');
-
-    if (contactBtn) contactBtn.classList.add('active');
-    if (contactForm) contactForm.classList.add('active');
-
-    footerFormsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+if (contactNavLinks.length && footerFormsSection) {
+  contactNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const onIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '';
+      if (onIndex) {
+        e.preventDefault();
+        activateContactFormAndScroll();
+      }
+      // if not on index, allow navigation to index.html#footerForms
+    });
   });
+
+  if (window.location.hash === '#footerForms') {
+    setTimeout(activateContactFormAndScroll, 50);
+  }
 }
 
 // Form submission handlers
