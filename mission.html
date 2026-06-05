@@ -66,7 +66,7 @@
             <div class="overview-copy mission-copy">
                 <h2>Our Mission</h2>
                 <p>
-                    To connect businesses with exceptional professionals who love what they do â€”driving growth for companies and creating opportunities around the world.
+                    To connect businesses with exceptional professionals who love what they do —driving growth for companies and creating opportunities around the world.
                 </p>
             </div>
             <div class="overview-card mission-card">
@@ -78,70 +78,84 @@
     </section>
     <footer>
         <!-- TOP SECTION: Forms -->
-        <div class="footer-forms">
+        <div id="footerForms" class="footer-forms">
     
-            <!-- Form Toggle Buttons -->
-            <div class="form-toggle">
-                <button class="toggle-btn active" data-form="contact">Contact Us</button>
-                <button class="toggle-btn" data-form="newsletter">Newsletter</button>
+            <!-- LEFT SECTION: Description -->
+            <div class="footer-forms-content">
+                <h2>Connect With ITalent4U</h2>
+                <p>
+                    At ITalent4U, we connect top-tier remote talent with global companies. We specialize in sourcing,
+                    hiring, and managing remote professionals across LATAM to help your business grow without borders.
+                </p>
+                <p>
+                    Whether you're looking to expand your team, need specialized talent, or want to stay updated on our
+                    latest opportunities, we're here to help.
+                </p>
             </div>
     
-            <!-- Contact Form -->
-            <form id="footerContactForm" class="form-container active" method="POST"
-                action="https://formspree.io/f/YOUR_FORM_ID">
-                <h3>Get in Touch</h3>
-    
-                <div class="form-group">
-                    <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+            <!-- RIGHT SECTION: Forms with Toggle Buttons -->
+            <div class="footer-forms-right">
+                <div class="form-toggle">
+                    <button class="toggle-btn active" data-form="contact">Contact Us</button>
+                    <button class="toggle-btn" data-form="newsletter">Newsletter</button>
                 </div>
     
-                <div class="form-group">
-                    <input type="email" id="f-email" name="email" placeholder="Your Email" required>
-                </div>
+                <!-- Contact Form -->
+                <form id="footerContactForm" class="form-container active" method="POST"
+                    action="https://formspree.io/f/YOUR_FORM_ID">
+                    <h3>Get in Touch</h3>
     
-                <div class="form-group">
-                    <input type="tel" id="f-phone" name="phone" placeholder="Phone Number" required>
-                </div>
+                    <div class="form-group">
+                        <input type="text" id="f-name" name="name" placeholder="Your Name" required>
+                    </div>
     
-                <div class="form-group">
-                    <input type="text" id="f-company" name="company" placeholder="Company Name" required>
-                </div>
+                    <div class="form-group">
+                        <input type="email" id="f-email" name="email" placeholder="Your Email" required>
+                    </div>
     
-                <div>
-                    <label for="service">What service are you looking for?</label>
-                    <select id="service" name="service" required>
-                        <option value="">Select</option>
-                        <option value="staffing">Staffing</option>
-                        <option value="consulting">Consulting</option>
-                        <option value="training">Training</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <input type="tel" id="f-phone" name="phone" placeholder="Phone Number" required>
+                    </div>
     
-                <div class="form-group">
-                    <textarea id="f-message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                </div>
+                    <div class="form-group">
+                        <input type="text" id="f-company" name="company" placeholder="Company Name" required>
+                    </div>
     
-                <button type="submit" class="btn-services">Send Message</button>
-                <p class="form-message" id="f-message-status"></p>
-            </form>
+                    <div>
+                        <label for="service">What service are you looking for?</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select</option>
+                            <option value="staffing">Staffing</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="training">Training</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
     
-            <!-- Newsletter Form -->
-            <form id="newsletterForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
-                <h3>Subscribe to our Newsletter</h3>
+                    <div class="form-group">
+                        <textarea id="f-message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
     
-                <div class="form-group">
-                    <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
-                </div>
+                    <button type="submit" class="btn-services">Send Message</button>
+                    <p class="form-message" id="f-message-status"></p>
+                </form>
     
-                <div class="form-group">
-                    <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
-                </div>
+                <!-- Newsletter Form -->
+                <form id="newsletterForm" class="form-container" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+                    <h3>Subscribe to our Newsletter</h3>
     
-                <button type="submit" class="btn-services">Subscribe</button>
-                <p class="form-message" id="nl-message"></p>
-            </form>
+                    <div class="form-group">
+                        <input type="text" id="nl-name" name="name" placeholder="Your Name" required>
+                    </div>
     
+                    <div class="form-group">
+                        <input type="email" id="nl-email" name="email" placeholder="Your Email" required>
+                    </div>
+    
+                    <button type="submit" class="btn-services">Subscribe</button>
+                    <p class="form-message" id="nl-message"></p>
+                </form>
+            </div>
         </div>
     
         <!-- SECOND SECTION -->
@@ -202,11 +216,7 @@
     
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="index.html#footerForms">Contact</a></li>
-                    <li><a href="login.html">Login</a></li>
-    
-                </ul>
-            </nav>
+                    <li><a href="#footerForms">Contact</a></li>
     
         </div>
     
@@ -215,6 +225,7 @@
             <p>&copy; <span id="currentyear"></span> ITalent4U. All rights reserved.</p>
             <p id="lastModified"></p>
         </div>
+    
     </footer>
 </body>
 </html>
